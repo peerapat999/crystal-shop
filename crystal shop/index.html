@@ -1,0 +1,89 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Shop - หน้าหลัก</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> <!-- ใช้ฟอนต์จาก Google -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Crystal Shop</a> <!-- โลโก้ร้าน -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">หน้าหลัก</a></li>
+                    <li><a href="products.php">สินค้า</a></li>
+                    <li><a href="about.php">เกี่ยวกับเรา</a></li>
+                    <li><a href="contact.php">ติดต่อเรา</a></li>
+                    <?php if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true): ?>
+                        <li><a href="logout.php">ออกจากระบบ</a></li>
+                    <?php else: ?>
+                        <li><a href="login.php">เข้าสู่ระบบ</a></li>
+                        <li><a href="register.php">สมัครสมาชิก</a></li>
+                    <?php endif; ?>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Banner Section -->
+    <section class="main-banner">
+        <div class="container">
+            <h1>ยินดีต้อนรับสู่ Crystal Shop</h1>
+            <p>ที่นี่ที่เดียวที่คุณจะพบสินค้าคริสตัลสุดพิเศษ</p>
+            <a href="products.php" class="btn">ดูสินค้าทั้งหมด</a>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>สินค้าขายดี</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="product1.jpg" alt="Product 1">
+                    <h3>คริสตัลสีชมพู</h3>
+                    <p>ราคา: 500 บาท</p>
+                    <a href="product_details.php?id=1" class="btn">ดูรายละเอียด</a>
+                </div>
+                <div class="product-item">
+                    <img src="product2.jpg" alt="Product 2">
+                    <h3>คริสตัลสีฟ้า</h3>
+                    <p>ราคา: 450 บาท</p>
+                    <a href="product_details.php?id=2" class="btn">ดูรายละเอียด</a>
+                </div>
+                <div class="product-item">
+                    <img src="product3.jpg" alt="Product 3">
+                    <h3>คริสตัลสีเขียว</h3>
+                    <p>ราคา: 600 บาท</p>
+                    <a href="product_details.php?id=3" class="btn">ดูรายละเอียด</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Crystal Shop. All rights reserved.</p>
+            <ul>
+                <li><a href="privacy.php">นโยบายความเป็นส่วนตัว</a></li>
+                <li><a href="terms.php">ข้อกำหนดและเงื่อนไข</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JS Scripts (optional) -->
+    <script>
+        // You can add some JavaScript functionality here if needed
+    </script>
+</body>
+</html>
